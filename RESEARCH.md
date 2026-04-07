@@ -225,14 +225,17 @@ Final Answer with Citations
 - PaddleOCR (better accuracy, GPU-accelerated)
 - LayoutLM / LayoutLMv3 (layout-aware)
 - Donut / Pix2Struct (VLM-based, end-to-end)
+  
 **Table Extraction**
 - Camelot / Tabula (rule-based, text PDFs)
 - CascadeTabNet / DeepDeSRT (deep learning, scanned docs)
 - VLM-based (semantic, irregular formats)
+  
 **Diagram and Circuit Understanding**
 - Grounding DINO + SAM 2 (region-level segmentation)
 - GenFlowchart (flowchart → Mermaid/DAG)
 - SINA pipeline (circuit → SPICE netlist, YOLOv11 + CCL)
+  
 **Embedding Strategies**
 | Strategy | Architecture | Accuracy | Memory |
 |---|---|---|---|
@@ -240,6 +243,7 @@ Final Answer with Citations
 | Caption-based | VLM Captioner + Text Embedding | Medium | Low |
 | Multi-Vector | Late Interaction (ColPali) | High | Extreme (1000x) |
 | Matryoshka | Truncatable Embeddings | Medium-High | Variable |
+
 **Retrieval Architectures**
 | Method | Strengths | Weaknesses | When to Use |
 |---|---|---|---|
@@ -250,6 +254,7 @@ Final Answer with Citations
 | Modality-Aware Retrieval | Queries multiple modality-specific stores, fuses results | Needs multimodal re-ranker; storage overhead | Multi-format documents with separate high-quality embed models |
 | Agentic/Hierarchical RAG | LLM agents decompose queries iteratively; Patho-AgenticRAG, HM-RAG | Much more complex; slower (multiple LLM calls) | Hard questions requiring reasoning across pages or modalities |
 | Long-Context Hybrid (Order-Preserve RAG / OP-RAG) | Preserving original text order in retrieved chunks boosts accuracy even with 128K context LLMs | Feeding entire doc to LLM without retrieval causes drift | Mega-LMs (100K+ tokens) offline — still consider smart retrieval |
+
 **Chunking Strategies**
 | Method | Advantage | Disadvantage |
 |---|---|---|
